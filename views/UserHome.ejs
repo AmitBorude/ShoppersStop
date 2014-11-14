@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+</html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){ 
+  $("#flip").click(function(){  
+    $("#panel").toggle();
+   });
+});
+
+</script>
+<style>
+
+#bar 
+{
+text-align : center;
+font-size: 125%;
+}
+
+#productTable
+{
+border: 1px solid black;
+float:center;
+height: 60px;
+width: 600px;
+margin-left: 25%;
+font-size: 100%;
+}
+
+h3
+{
+color:#00A11B;
+}
+img{
+float:right;
+width:100px;
+height:80px
+}
+
+#panel,#flip
+{
+font-size:20px;
+width:300px;
+padding:5px;
+text-align:center;
+background-color:#d3d3d3;
+clear:both;
+float:right;
+}
+
+#panel{
+border-collapse: collapse;
+length:1000px;
+display:none;
+padding:5px;
+}
+
+table{
+border-collapse: collapse;
+}
+</style>
+
+
+</head>
+
+<body>
+<h3 >Welcome <%=name%></h3>
+
+<img src="images/cart.png" alt="some_text">
+
+<div id="bar" float="right">
+<a href="/History">History</a> |
+<a href="/About">About Us</a> |
+<a href="/Help"> Help</a>
+</div>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+
+<table id="productTable" border="1"  >
+<tr><td>Name</td><td>Description</td>
+<td>Price</td>
+<td>Quantity</td><td>Select</td></tr>
+
+<%for(i in products)
+{
+%>
+<tr><td><%=products[i].name%></td><td><%=products[i].description%></td>
+<td><%=products[i].price%></td>
+<td><%=products[i].quantity%></td><td><input type="checkbox" name="tick"></td></tr>
+<%}%>
+</table>
+<div id="flip">
+ <b>Add Product</b>
+</div>
+
+<div id="panel">
+<form method="post" action="/Add">
+<table>
+    <tr><td><b>*Name</b></td><td><input type="text" id="name" name="name" required></td></tr>
+    <tr><td><b>*Description</td><td><input type="text" id="description" name="description" required></td></tr>
+    <tr><td><b>*Price</b></td><td><input type="text" id="price" name="price" required></td></tr>
+    <tr><td><b>*Quantity</b></td><td><input type="text" id="quantity" name="quantity" required></td></tr>
+     <tr><td><b>*Email</b></td><td><input type="text" id="email" name="email" required></td></tr>
+    <tr><td></td><td><button id="b1" type="submit">Add Product</button></td></tr> 
+</table>
+</form>
+</div>
+
+
+</body>
+</html>

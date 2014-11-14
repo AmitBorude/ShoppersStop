@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+      $("#flip").click(function(){
+        $("#panel").toggle();
+      });
+    });
+</script>
+
+<style> 
+body{
+background-image:url("images/s.jpg");
+background-size: 1380px 680px;
+background-repeat:none;
+}
+
+#login{
+float:right;
+background-color:#d3d3d3;
+border:solid 1px #5A5A5A;
+width:580px;
+padding-left: 30cm;
+text-align:right;
+}    
+
+#panel, #flip{
+background-color:#FFA500;
+border:solid 1px #5A5A5A;
+display:inline;
+width:300px;
+text-align:center;
+clear:both;
+float:right;
+padding:5px;
+}
+
+#panel{
+display:none;
+}
+
+</style>    
+</head>
+  
+  
+<body>
+  
+<div id="login">
+<form id="f1" method="post" action="/UserHome">
+<table>
+
+    <td><b> Email</b></td><td><input type="text" id="email" name="email" required></td>
+    <td><b>Password</b></td><td><input type="password" id="password" name="password" required></td>
+    <td><button id="b1" type="submit">Sign In</button></td></tr> 
+</table>
+</form>
+</div>
+
+<div id="flip">
+ <i>Don't have account?</i> 
+ <b>Sign Up </b>
+</div>
+
+<div id="panel">
+<form id="f2" method="post" action="/index">
+<table spacing="2" >
+    <tr><td><b>First Name</b></td><td><input type="text" id="firstname" name="firstname" required></td></tr>
+    <tr><td><b>Last Name</b></td><td><input type="text" id="lastname" name="lastname" required></td></tr>
+    <tr><td><b> Email</b></td><td><input type="text" id="email" name="email" required></td></tr>
+    <tr><td><b>Password</b></td><td><input type="password" id="password" name="password" required></td></tr>
+    <tr><td><b>Address</b></td><td><input type="text" id="address" name="address" required></td></tr>
+    <tr><td></td><td><button id="b1" type="submit">Sign Up</button></td></tr> 
+</table>
+</form>
+</div>
+
+
+
+</body>
+</html>
